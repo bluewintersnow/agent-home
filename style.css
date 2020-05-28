@@ -1,0 +1,393 @@
+:root {
+    /* FONT SIZE */
+    --font-size-small: 1rem;
+    --font-size-medium: 1.1rem;
+    --font-size-subheading: 1.3rem;
+    --font-size-semi-big: 1.5rem;
+    --font-size-big: 1.9rem;
+    --font-size-extrabig: 2.2rem;
+    /* COLORS */
+    --color-black: #000000;
+    --color-big-title: #00212F;
+    --color-blue: #003BFF;
+    --color-mint: #06AD8F;
+    --color-red: #FF0100;
+    --color-yellow: #FFC600;
+    --color-nav: #062839;
+    --color-white: #ffff;
+    --color-gray: #5c5c5c;
+    /* SPACING */
+    --spacing-extra-big: 7rem;
+    --spacing-big: 4rem;
+    --spacing-medium: 2rem;
+    --spacing-semi-medium: 1.5rem;
+    --spacing-small: 1rem;
+    --spacing-xsmall: 0.8rem;
+    --spacing-xxsmall: 0.2rem;
+
+    --leter-spacing-small: 0.2rem;
+
+    /* ANIMATION */
+    --menu-speed: 0.75s;
+}
+
+/* 
+font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+ */
+
+/* Overall----------------------------------------------- */
+* {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li,
+ol {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button:focus,
+button:active,
+input:focus,
+input:active {
+    outline: none;
+    box-shadow: none;
+}
+
+button {
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ----------------------------------------------------- */
+
+/* HEADER */
+
+header {
+    color: var(--color-white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.header {
+
+    height: 54px;
+    background-color: var(--color-nav);
+    padding: 0 var(--spacing-medium);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__left,
+.header__right {
+    display: flex;
+}
+
+.header__left--email {
+    margin-left: var(--spacing-big);
+}
+
+.header__right i {
+    color: var(--color-white);
+    font-size: var(--font-size-semi-big);
+}
+
+.header__right li:nth-child(2) {
+    margin-left: var(--spacing-semi-medium);
+}
+
+/* Hamburger Menu */
+
+.header__hamburger {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.header__hamburger .toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+
+.header__hamburger .hamburger--line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hamburger Line */
+.hamburger--line>.line {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+/* Top and Bottom Line */
+.header__hamburger .hamburger--line>.line:before,
+.header__hamburger .hamburger--line>.line:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+}
+
+/* Moves line down */
+.header__hamburger .hamburger--line>.line:after {
+    top: 10px;
+}
+
+/* Toggler animate */
+.header__hamburger .toggler:checked+.hamburger--line>.line {
+    transform: rotate(135deg);
+}
+
+/* Turn lines into X */
+.header__hamburger .toggler:checked+.hamburger--line>.line:before,
+.header__hamburger .toggler:checked+.hamburger--line>.line:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* Rotate on hover when checked */
+.header__hamburger .toggler:checked:hover+.hamburger--line>.line {
+    transform: rotate(225deg);
+}
+
+/* Show Menu */
+
+.header__hamburger .toggler:checked~.hamburger__menu {
+    visibility: visible;
+}
+
+.header__hamburger .toggler:checked~.hamburger__menu>div {
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
+}
+
+.header__hamburger .toggler:checked~.hamburger__menu>div>div {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.header__hamburger .hamburger__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__hamburger .hamburger__menu>div {
+    background: var(--color-nav);
+    border-radius: 50%;
+    width: 200vw;
+    height: 200vw;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+
+.header__hamburger .hamburger__menu>div>div {
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.header__hamburger .hamburger__menu>div>div>ul>li {
+    font-size: var(--font-size-subheading);
+    padding: var(--spacing-small);
+}
+
+.header__hamburger .hamburger__menu>div>div>ul>li>a {
+    color: inherit;
+    transition: color 0.4s ease;
+}
+
+
+
+/* HEADER END */
+
+/* ----------------------------------------------------- */
+
+/* NAVIGATION */
+
+.top>.container>.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    text-align: center;
+    padding: 0 var(--spacing-big);
+    z-index: 1;
+    background-color: transparent;
+}
+
+.menu__home--eng,
+.menu__about--eng,
+.menu__featured--eng,
+.menu__kelowna--eng,
+.menu__contactme--eng {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.menu__home--kor,
+.menu__about--kor,
+.menu__featured--kor,
+.menu__kelowna--kor,
+.menu__contactme--kor {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--color-gray);
+}
+
+/* .menu__home--clicked {
+    position: relative;
+    height: 8px;
+    width: 80px;
+    bottom: -22px;
+    background-color: var(--color-mint);
+} */
+
+
+
+/* NAVIGATION END */
+
+/* ----------------------------------------------------- */
+
+/* MAIN BANNER */
+.main>.container>.banner {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-white);
+    height: 640px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/kelowna_main_image.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner__logo img {
+    width: 100px;
+}
+
+.banner__name {
+    font-size: var(--font-size-extrabig);
+    font-weight: 600;
+    letter-spacing: var(--leter-spacing-small);
+}
+
+.banner__intro {
+    margin-top: var(--spacing-xsmall);
+}
+
+.banner__intro li {
+    font-size: var(--font-size-subheading);
+}
+
+.banner__intro li:nth-child(2) {
+    margin-top: var(--spacing-xxsmall);
+}
+
+
+.banner__ctbutton button {
+    margin-top: var(--spacing-big);
+    font-size: var(--font-size-medium);
+    font-weight: 700;
+    width: 250px;
+    height: 60px;
+    border: 2px solid var(--color-mint);
+    background-color: transparent;
+    border-radius: 40px;
+    color: var(--color-white);
+    transition: 300ms ease-in-out;
+}
+
+.banner__ctbutton button:hover {
+    background-color: var(--color-mint);
+}
+
+/* MAIN BANNER END */
+
+/* ----------------------------------------------------- */
+
+/* >= 768px */
+@media screen and (max-width: 768px) {
+
+    /* Reset */
+    .container {
+        width: 100%;
+    }
+
+    /* Header */
+    .header__left {
+        display: none
+    }
+
+    .header__hamburger {
+        display: block;
+    }
+
+
+    /* Navigation */
+    nav.top {
+        display: none;
+    }
+
+
+
+}
