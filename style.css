@@ -257,8 +257,6 @@ header {
     transition: color 0.4s ease;
 }
 
-
-
 /* HEADER END */
 
 /* ----------------------------------------------------- */
@@ -332,20 +330,60 @@ header {
 }
 
 .banner__intro {
-    margin-top: var(--spacing-xsmall);
+    margin: var(--spacing-small);
+    position: relative;
+
 }
 
-.banner__intro li {
+.banner__intro span {
     font-size: var(--font-size-subheading);
+    font-weight: 700;
 }
 
-.banner__intro li:nth-child(2) {
-    margin-top: var(--spacing-xxsmall);
+/* Intro Animation */
+
+.banner__intro--desc {
+    font-size: var(--font-size-subheading);
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
+
+.banner__intro--desc:nth-child(1) {
+    animation-name: fade;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: alternate-reverse;
+}
+
+.banner__intro--desc:nth-child(2) {
+    animation-name: fade;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: alternate;
+}
+
+@keyframes fade {
+
+    0%,
+    45% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Intro Animation End */
 
 
 .banner__ctbutton button {
-    margin-top: var(--spacing-big);
+    margin-top: var(--spacing-extra-big);
     font-size: var(--font-size-medium);
     font-weight: 700;
     width: 250px;
@@ -382,12 +420,9 @@ header {
         display: block;
     }
 
-
     /* Navigation */
     nav.top {
         display: none;
     }
-
-
 
 }
