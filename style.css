@@ -15,6 +15,7 @@
     --color-red: #FF0100;
     --color-yellow: #FFC600;
     --color-nav: #062839;
+    --color-nav-opacity: rgba(6, 40, 57, 0.8);
     --color-white: #ffff;
     --color-gray: #5c5c5c;
     --color-lightgray: #d4d4d4;
@@ -280,7 +281,8 @@ header {
     text-align: center;
     padding: 0 var(--spacing-big);
     z-index: 1;
-    background-color: transparent;
+    background-color: var(--color-white);
+
 }
 
 .menu__home--eng,
@@ -288,8 +290,9 @@ header {
 .menu__featured--eng,
 .menu__kelowna--eng,
 .menu__contactme--eng {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: 600;
+    color: var(--color-nav);
 }
 
 .menu__home--kor,
@@ -298,17 +301,8 @@ header {
 .menu__kelowna--kor,
 .menu__contactme--kor {
     font-family: 'Noto Sans KR', sans-serif;
-    color: var(--color-gray);
+    color: var(--color-nav);
 }
-
-/* .menu__home--clicked {
-    position: relative;
-    height: 8px;
-    width: 80px;
-    bottom: -22px;
-    background-color: var(--color-mint);
-} */
-
 
 
 /* NAVIGATION END */
@@ -335,13 +329,11 @@ header {
 .banner__name {
     font-size: var(--font-size-extrabig);
     font-weight: 600;
-    letter-spacing: var(--leter-spacing-small);
+    letter-spacing: var(--leter-spacing-me);
 }
 
 .banner__intro {
-    margin: var(--spacing-small);
     position: relative;
-
 }
 
 .banner__intro span {
@@ -358,6 +350,7 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0%);
+    margin-top: var(--spacing-small);
 }
 
 .banner__intro--desc:nth-child(1) {
@@ -366,6 +359,7 @@ header {
     animation-iteration-count: infinite;
     animation-duration: 5s;
     animation-direction: alternate-reverse;
+
 }
 
 .banner__intro--desc:nth-child(2) {
@@ -374,6 +368,8 @@ header {
     animation-iteration-count: infinite;
     animation-duration: 5s;
     animation-direction: alternate;
+
+
 }
 
 @keyframes fade {
@@ -471,6 +467,7 @@ header {
 
 .about__left--desc div:nth-child(1) {
     font-weight: 700;
+    font-size: var(--font-size-semi-big);
 }
 
 
@@ -534,14 +531,17 @@ header {
 
 .about__kor--info li {
     display: inline-block;
+
 }
 
 .about__kor--info li:nth-child(1) {
     margin-right: var(--spacing-semi-medium);
+    margin-bottom: var(--font-size-small);
 }
 
 .about__kor--info i {
-    width: 24px;
+    margin-right: var(--spacing-small);
+    text-align: center;
 }
 
 .about__kor--info ul>li>span {
@@ -550,7 +550,7 @@ header {
 }
 
 .about__kor--messenger {
-    margin-bottom: var(--spacing-extra-big);
+    margin-bottom: var(--font-size-big);
     margin-top: var(--spacing-small);
 }
 
