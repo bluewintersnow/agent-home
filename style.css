@@ -721,18 +721,67 @@ header {
 /* ----------------------------------------------------- */
 
 /* CONTACT ME */
+.contact__heading {
+    position: relative;
+}
 
-.contactme .contact {
+.contact__heading h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--font-size-big);
+    font-weight: 600;
+    text-align: center;
+    color: var(--color-big-title);
+    margin: var(--spacing-big);
+}
+
+.contact__heading--title {
+    z-index: 1;
+    width: 410px;
+    background-color: var(--color-white);
+    text-align: center;
+}
+
+
+.contact__heading--line::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    height: 1px;
+    width: 100%;
+    background-color: var(--color-big-title);
+    z-index: -1;
+}
+
+
+.contactme .contact_wrap {
     display: flex;
     justify-content: space-evenly;
+    padding-left: var(--spacing-big);
+    padding-right: var(--spacing-big);
 }
 
 .contact__left {
     font-family: 'Lato', sans-serif;
+    margin-right: var(--spacing-big);
+    margin-bottom: var(--spacing-medium);
 }
 
 .contact__left h1 {
     font-size: var(--spacing-semi-medium);
+    margin-bottom: var(--spacing-semi-medium);
+}
+
+.contact__left p {
+    margin-bottom: var(--spacing-semi-medium);
+}
+
+.contact__left .left {
+    width: 100px;
+}
+
+.contact__left .right {
+    color: var(--color-blue);
+    font-weight: 700;
 }
 
 .contact__left--phoneandmes .mobile,
@@ -745,14 +794,13 @@ header {
 
 
 .contact__right {
-    width: 60%;
+    width: 100%;
 }
 
 .contact__right form {
     display: flex;
     flex-direction: column;
     font-family: 'Noto Sans KR', sans-serif;
-
 }
 
 .contact__right form>input {
@@ -777,14 +825,27 @@ input:focus {
     ;
 }
 
+.contact__right form>button {
+    margin: var(--spacing-big) 0;
+    font-size: var(--font-size-medium);
+    font-weight: 700;
+    width: 200px;
+    height: 60px;
+    border: 2px solid var(--color-mint);
+    background-color: transparent;
+    border-radius: 40px;
+    color: var(--color-mint);
+    transition: 300ms ease-in-out;
+}
 
-
-
+.contact__right form>button:hover {
+    background-color: var(--color-mint);
+    color: var(--color-white);
+}
 
 
 
 /* CONTACT ME END */
-
 /* ----------------------------------------------------- */
 
 
@@ -881,4 +942,26 @@ input:focus {
     .cards {
         padding: var(--spacing-medium);
     }
+
+    /* Content - Contact Me */
+    .contact__heading--title {
+        width: 100%;
+    }
+
+    .contactme .contact_wrap {
+        flex-direction: column;
+        padding-left: var(--spacing-medium);
+        padding-right: var(--spacing-medium);
+    }
+
+    .contact__left--phoneandmes .mobile,
+    .contact__left--phoneandmes .office,
+    .contact__left--phoneandmes .email,
+    .contact__left--phoneandmes .kakaotalk {
+        flex-direction: column;
+        margin-bottom: var(--spacing-small);
+    }
+
+
+
 }
