@@ -48,6 +48,7 @@ font-family: 'Noto Sans KR', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 ul,
@@ -81,6 +82,21 @@ button {
   max-width: 1280px;
   margin: 0 auto;
 }
+
+/* PAGE UP PAGE DOWN SCROLL MENU */
+
+header,
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+nav {
+  top: 54px;
+}
+
+/* PAGE UP PAGE DOWN SCROOL MENU END */
 
 /* ----------------------------------------------------- */
 
@@ -273,6 +289,10 @@ header {
 /* ----------------------------------------------------- */
 
 /* NAVIGATION */
+.top {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+}
 
 .top > .container > .menu {
   display: flex;
@@ -282,7 +302,6 @@ header {
   text-align: center;
   padding: 0 var(--spacing-big);
   z-index: 1;
-  background-color: var(--color-white);
 }
 
 .menu__home--eng,
@@ -310,6 +329,7 @@ header {
 
 /* MAIN BANNER */
 .main {
+  padding-top: 54px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(img/kelowna_main_image.jpg);
   background-size: cover;

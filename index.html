@@ -33,7 +33,7 @@
             </ul>
 
             <div class="header__hamburger">
-                <input type="checkbox" class="toggler">
+                <input type="checkbox" class="toggler" id="closeIcon">
                 <div class="hamburger--line">
                     <div class="line"></div>
                 </div>
@@ -41,12 +41,13 @@
                 <div class="hamburger__menu">
                     <div>
                         <div>
-                            <ul>
-                                <li><a href="">HOME <div>홈</div> </a> </li>
-                                <li><a href="">ABOUT <div>로니 부동산</div> </a> </li>
-                                <li><a href="">FEAUTRED LISTINGS <div>추천 매물</div> </a> </li>
-                                <li><a href="">KELOWNA <div>켈로나 소개</div> </a> </li>
-                                <li><a href="">CONTACT ME<div>문의하기</div> </a> </li>
+                            <ul id="menu">
+                                <li><a href="#">HOME <div>홈</div> </a> </li>
+                                <li><a href="#about">ABOUT <div>로니 부동산</div> </a> </li>
+                                <li><a href="#featuredlistings">FEAUTRED LISTINGS <div>추천 매물</div> </a> </li>
+                                <li><a href="https://www.tourismkelowna.com/" target="_blank">KELOWNA <div>켈로나 소개</div>
+                                    </a> </li>
+                                <li><a href="#contactme">CONTACT ME<div>문의하기</div> </a> </li>
                             </ul>
                         </div>
                     </div>
@@ -62,32 +63,32 @@
     <div class="container">
         <ul class="menu">
             <li class="menu__home">
-                <a href="">
+                <a href="#">
                     <div class="menu__home--eng">HOME</div>
                     <div class="menu__home--kor">홈</div>
                 </a>
                 <div class="menu__home--clicked"></div>
             </li>
             <li class="menu__about">
-                <a href="">
+                <a href="#about">
                     <div class="menu__about--eng">ABOUT</div>
                     <div class="menu__about--kor"> 로니 부동산</div>
                 </a>
             </li>
             <li class="menu__featured">
-                <a href="">
+                <a href="#featuredlistings">
                     <div class="menu__featured--eng">FEATURED LISTINGS</div>
                     <div class="menu__featured--kor">추천매물</div>
                 </a>
             </li>
             <li class="menu__kelowna">
-                <a href="">
+                <a href="https://www.tourismkelowna.com/" target="__blank">
                     <div class="menu__kelowna--eng">KELOWNA</div>
                     <div class="menu__kelowna--kor">켈로나 소개</div>
                 </a>
             </li>
             <li class="menu__contactme">
-                <a href="">
+                <a href="#contactme">
                     <div class="menu__contactme--eng">CONTACT ME</div>
                     <div class="menu__contactme--kor">문의하기</div>
                 </a>
@@ -126,7 +127,7 @@
 <!-- MAIN BANNER END -->
 
 <!-- CONTENT ABOUT -->
-<section class="about">
+<section class="about" id="about">
     <div class="container">
         <div class="about__heading">
             <div class="about__heading--title">
@@ -188,7 +189,7 @@
 <!-- CONTENT ABOUT END -->
 
 <!-- CONTENT FEATURED LISTINGS -->
-<div class="featuredlistings">
+<div class="featuredlistings" id="featuredlistings">
     <div class="container">
         <div class="featured__heading">
             <div class="featured__heading--title">
@@ -264,7 +265,7 @@
 <!-- CONTENT FEATURED LISTING END -->
 <!-- CONTACT ME -->
 
-<div class="contactme">
+<div class="contactme" id="contactme">
     <div class="container">
         <div class="contact">
             <div class="contact__heading">
@@ -375,6 +376,21 @@
 </footer>
 <!-- FOOTER END -->
 
+<!-- JavaScript -->
+<script>
+    var menu = document.getElementById('menu');
+    var closeIcon = document.getElementById("closeIcon");
+
+    menu.addEventListener('click', handleMenuClick);
+
+    function handleMenuClick(event) {
+        if (event.target instanceof HTMLAnchorElement) {
+            closeIcon.checked = false;
+        }
+    }
+</script>
+
+<!-- JavaScript End -->
 </body>
 
 </html>
