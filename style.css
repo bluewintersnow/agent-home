@@ -90,6 +90,8 @@ header {
   color: var(--color-white);
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
+  background-color: var(--color-nav);
+  width: 100%;
 }
 
 .header {
@@ -307,12 +309,18 @@ header {
 /* ----------------------------------------------------- */
 
 /* MAIN BANNER */
+.main {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(img/kelowna_main_image.jpg);
+  background-size: cover;
+}
+
 .main > .container > .banner {
   font-family: "Montserrat", sans-serif;
   color: var(--color-white);
   height: 640px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(img/kelowna_main_image.jpg);
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(img/kelowna_main_image.jpg); */
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -695,6 +703,10 @@ header {
 /* ----------------------------------------------------- */
 
 /* CONTACT ME */
+.contact_wrap {
+  padding-bottom: var(--spacing-big);
+}
+
 .contact__heading {
   position: relative;
 }
