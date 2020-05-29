@@ -722,11 +722,60 @@ header {
 
 /* CONTACT ME */
 
+.contactme .contact {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contact__left {
+    font-family: 'Lato', sans-serif;
+}
+
+.contact__left h1 {
+    font-size: var(--spacing-semi-medium);
+}
+
+.contact__left--phoneandmes .mobile,
+.contact__left--phoneandmes .office,
+.contact__left--phoneandmes .email,
+.contact__left--phoneandmes .kakaotalk {
+    display: flex;
+}
 
 
 
+.contact__right {
+    width: 60%;
+}
 
+.contact__right form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans KR', sans-serif;
 
+}
+
+.contact__right form>input {
+    margin-bottom: var(--spacing-small);
+}
+
+input,
+textarea {
+    color: var(--color-black);
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+label {
+    margin-bottom: var(--spacing-xsmall);
+}
+
+input:focus {
+    border: 1px solid var(--color-mint);
+    ;
+}
 
 
 

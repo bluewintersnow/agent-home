@@ -265,34 +265,45 @@
 
 <div class="contactme">
     <div class="container">
-        <div class="contact__left">
-            <div class="contact__left--officeinfo">
-                <h1>Our Office</h1>
-                <p>108-1980 Copper Road.
-                    <br>Kelowna, BC
-                    <br>V1Y 8K5
-                </p>
+        <div class="contact">
+            <div class="contact__left">
+                <div class="contact__left--officeinfo">
+                    <h1>Our Office</h1>
+                    <p>108-1980 Copper Road.
+                        <br>Kelowna, BC
+                        <br>V1Y 8K5
+                    </p>
+                </div>
+                <div class="contact__left--phoneandmes">
+                    <div class="mobile">
+                        <div class="left">Mobile</div>
+                        <div class="right">(250) 575-4159</div>
+                    </div>
+                    <div class="office">
+                        <div class="left">Office</div>
+                        <div class="right">(250) 861-5122</div>
+                    </div>
+                    <div class="email">
+                        <div class="left">E-mail</div>
+                        <div class="right">ronybudongsan@gmail.com</div>
+                    </div>
+                    <div class="kakaotalk">
+                        <div class="left">kakaotalk <br>& line</div>
+                        <div class="right">ronybudongsan</div>
+                    </div>
+                </div>
             </div>
-            <div class="contact__left--phoneandmes">
-                <div class="mobile">
-                    <div class="left">Mobile</div>
-                    <div class="right">(250) 575-4159</div>
-                </div>
-                <div class="office">
-                    <div class="left">Office</div>
-                    <div class="right">(250) 861-5122</div>
-                </div>
-                <div class="email">
-                    <div class="left">E-mail</div>
-                    <div class="right">ronybudongsan@gmail.com</div>
-                </div>
-                <div class="kakaotalk">
-                    <div class="left">kakaotalk <br>& line</div>
-                    <div class="right">ronybudongsan</div>
-                </div>
+            <div class="contact__right">
+                <form action="contact">
+                    <input type="text" id="name" name="Name" placeholder="Your Name / 성함" required>
+                    <input type="text" id="phone" name="Phone" placeholder="Phone Number / 전화번호">
+                    <input type="text" id="email" name="Email" placeholder="E-mail Address / 이메일(필수)" required>
+                    <label for="subject">Your Message 무엇을 도와드릴까요?</label>
+                    <textarea name="subject" id="subject" cols="30" rows="10" placeholder="예약 가능 여부 및 요금이 궁금합니다. 다음과 관련한 도움이 필요합니다.
+                    "></textarea>
+                </form>
             </div>
         </div>
-        <div class="contact__right"></div>
     </div>
 </div>
 
