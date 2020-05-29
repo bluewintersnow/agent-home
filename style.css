@@ -624,8 +624,7 @@ header {
 .featured__card1--image,
 .featured__card2--image,
 .featured__card3--image {
-    min-width: 400px;
-    flex-basis: 0;
+
     margin-right: var(--spacing-medium);
     position: relative;
 }
@@ -633,7 +632,7 @@ header {
 .featured__card1 img,
 .featured__card2 img,
 .featured__card3 img {
-    width: 100%;
+    width: 400px;
     z-index: -1;
 }
 
@@ -802,5 +801,13 @@ header {
     .featured__card2--image,
     .featured__card3--image {
         width: 100%;
+    }
+
+    .cards img {
+        width: 100%;
+    }
+
+    .cards {
+        padding: var(--spacing-medium);
     }
 }
